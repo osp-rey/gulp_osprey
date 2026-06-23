@@ -1,5 +1,4 @@
 import gulp from "gulp";
-import changed from "gulp-changed";
 import plumber from "gulp-plumber";
 import replace from "gulp-replace";
 import fileInclude from "gulp-file-include";
@@ -11,7 +10,6 @@ export function htmlDev() {
 
   return gulp
     .src("./src/*.html")
-    .pipe(changed("./dist/"))
     .pipe(plumber(plumberHtml))
     .pipe(
       fileInclude({
@@ -28,7 +26,6 @@ export function htmlBuild() {
 
   return gulp
     .src("./src/*.html")
-    .pipe(changed("./dist/"))
     .pipe(plumber(plumberHtml))
     .pipe(
       fileInclude({
