@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
+import TerserPlugin from "terser-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,7 +25,18 @@ const webpackConfig = {
     filename: "app.js",
   },
   optimization: {
-    minimize: false,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: false,
+          mangle: false,
+          format: {
+            comments: false,
+            beautify: true, 
+          },
+        },
+      }),
+    ],
   },
   module: {
     rules: [
