@@ -1,0 +1,20 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.body-hidden {
+  overflow: hidden;
+  touch-action: none;
+}
+.body {
+  &.error404 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+}

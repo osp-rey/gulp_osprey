@@ -1,0 +1,54 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+@mixin pressed {
+  &:active {
+    @content;
+  }
+}
+
+@mixin first($num) {
+  @if $num == 1 {
+    &:first-child {
+      @content;
+    }
+  } @else {
+    &:nth-child(-n + #{$num}) {
+      @content;
+    }
+  }
+}
+
+@mixin last($num) {
+  &:nth-last-child(-n + #{$num}) {
+    @content;
+  }
+}
+
+@mixin overflowText($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
