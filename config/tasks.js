@@ -31,5 +31,5 @@ gulp.task("watch", function () {
   gulp.watch("./src/js/**/*.js", gulp.parallel("js:dev", "reload"));
   gulp.watch("./src/img/**/*", gulp.parallel("images:dev", "reload"));
   gulp.watch("./src/files/**/*", gulp.parallel("files", "reload"));
-  gulp.watch("./src/svgicons/*.svg", gulp.parallel("files", "reload"));
+  gulp.watch("./src/svgicons/*.svg", gulp.parallel("sprites", "reload"));
 });
