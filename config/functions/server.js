@@ -8,5 +8,6 @@ export default function server() {
     },
     open: true,
     port: 3000,
+    notify: false
   });
 }
