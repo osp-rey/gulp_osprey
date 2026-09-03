@@ -21,7 +21,7 @@ gulp.task("images:build", imagesBuild);
 gulp.task("files", files);
 gulp.task("js:dev", jsDev);
 gulp.task("js:build", jsBuild);
-// gulp.task("sprites", sprites);
+gulp.task("sprites", sprites);
 gulp.task("reload", serverReload);
 gulp.task("server", server);
 
@@ -31,5 +31,5 @@ gulp.task("watch", function () {
   gulp.watch("./src/js/**/*.js", gulp.parallel("js:dev", "reload"));
   gulp.watch("./src/img/**/*", gulp.parallel("images:dev", "reload"));
   gulp.watch("./src/files/**/*", gulp.parallel("files", "reload"));
-  // gulp.watch("./src/svgicons/*.svg", gulp.parallel("sprites", "reload"));
+  gulp.watch("./src/svgicons/*.svg", gulp.parallel("sprites", "reload"));
 });
