@@ -1,0 +1,7 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.wpcf7-response-output,
+.wpcf7-spinner {
+  display: none !important;
+}
